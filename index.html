@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Negócio Digital na Prática — Kit completo de marketing para pequenos negócios</title>
+<meta name="description" content="Kit digital com e-book por tópicos, roteiros de vídeo, modelos de WhatsApp e prompts de IA para organizar o marketing do seu pequeno negócio e vender mais.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --verde-escuro:#071F18;
+    --verde-escuro-2:#0E3B2C;
+    --verde-vibrante:#32D174;
+    --verde-vibrante-2:#20A862;
+    --branco:#FFFFFF;
+    --preto:#0B0E0C;
+    --cinza-claro:#F3F6F4;
+    --cinza-texto:#55605A;
+    --borda:#E3EAE6;
+    --sombra: 0 14px 34px rgba(7,31,24,0.14);
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    color:var(--preto);
+    background:var(--branco);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  /* grão cinematográfico sutil no fundo escuro */
+  .grao{position:relative;}
+  .grao::before{
+    content:"";position:absolute;inset:0;z-index:0;opacity:.05;pointer-events:none;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .grao > *{position:relative;z-index:1;}
+  h1,h2,h3,h4{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    margin:0 0 .45em 0;
+    line-height:1.18;
+    font-weight:600;
+  }
+  .container{max-width:1080px;margin:0 auto;padding:0 20px;}
+  a{color:inherit;}
+  img{max-width:100%;}
+
+  /* ===== HEADER ===== */
+  header{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--borda);z-index:50;}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;max-width:1080px;margin:0 auto;}
+  .logo{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.25rem;color:var(--verde-escuro);display:flex;align-items:center;gap:6px;}
+  .logo span{color:var(--verde-vibrante-2);}
+  .btn-header{background:var(--verde-vibrante);color:var(--preto);padding:10px 18px;border-radius:999px;font-weight:600;font-size:.88rem;text-decoration:none;white-space:nowrap;}
+
+  /* ===== HERO ===== */
+  .hero{background:radial-gradient(120% 140% at 15% 0%,var(--verde-escuro-2) 0%,var(--verde-escuro) 55%,#04120D 100%);color:var(--branco);padding:68px 0 76px;text-align:center;}
+  .hero .tag{display:inline-flex;align-items:center;gap:10px;font-family:'Inter';font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--verde-vibrante);margin-bottom:24px;}
+  .hero .tag::before,.hero .tag::after{content:"";width:24px;height:1px;background:rgba(50,209,116,.5);}
+  .hero h1{font-size:clamp(2rem,5vw,3.1rem);max-width:780px;margin:0 auto .4em;font-style:normal;}
+  .hero h1 em{color:var(--verde-vibrante);font-style:italic;}
+  .hero p.subtitle{font-family:'Inter';font-size:clamp(1rem,2.2vw,1.1rem);max-width:560px;margin:0 auto 30px;color:rgba(255,255,255,.78);}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;}
+  .btn-primary{background:var(--verde-vibrante);color:var(--preto);padding:16px 30px;border-radius:9px;font-weight:700;text-decoration:none;font-size:1.02rem;box-shadow:var(--sombra);transition:transform .2s var(--ease),filter .2s var(--ease);display:inline-block;}
+  .btn-primary:hover{transform:translateY(-2px);filter:brightness(1.05);}
+  .btn-secondary{background:transparent;color:var(--branco);padding:16px 26px;border:1.5px solid rgba(255,255,255,.4);border-radius:9px;font-weight:600;text-decoration:none;font-size:.98rem;transition:border-color .2s;}
+  .btn-secondary:hover{border-color:rgba(255,255,255,.8);}
+  .price-pill{display:inline-flex;align-items:baseline;gap:8px;margin-top:28px;color:rgba(255,255,255,.72);font-size:.9rem;font-family:'Inter';}
+  .price-pill strong{font-size:1.7rem;color:var(--branco);font-family:'Cormorant Garamond',serif;}
+
+  /* ===== SECTIONS ===== */
+  section{padding:68px 0;}
+  .section-title{text-align:center;max-width:640px;margin:0 auto 40px;}
+  .section-title .eyebrow{color:var(--verde-vibrante-2);font-weight:700;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;display:block;margin-bottom:12px;font-family:'Inter';}
+  .section-title h2{font-size:clamp(1.55rem,4vw,2.25rem);color:var(--verde-escuro);}
+  .section-title p{color:var(--cinza-texto);font-size:.98rem;}
+
+  /* ===== PROBLEMAS ===== */
+  .problemas{background:var(--cinza-claro);}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .card{background:var(--branco);border:1px solid var(--borda);border-radius:14px;padding:26px 22px;transition:transform .2s var(--ease),box-shadow .2s var(--ease);}
+  .card:hover{transform:translateY(-3px);box-shadow:var(--sombra);}
+  .card .icone{width:42px;height:42px;border-radius:11px;background:rgba(50,209,116,.1);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:14px;}
+  .card h3{font-family:'Inter';font-size:1.02rem;font-weight:700;color:var(--preto);}
+  .card p{color:var(--cinza-texto);font-size:.92rem;margin:0;}
+
+  /* ===== TÓPICOS (prévia do conteúdo) ===== */
+  .topicos-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  .topico-card{display:flex;gap:16px;align-items:flex-start;background:var(--branco);border:1px solid var(--borda);border-radius:14px;padding:22px;transition:transform .2s var(--ease),box-shadow .2s var(--ease);}
+  .topico-card:hover{transform:translateY(-3px);box-shadow:var(--sombra);}
+  .topico-card .n{flex:0 0 auto;font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--verde-vibrante-2);line-height:1;}
+  .topico-card h4{font-family:'Inter';margin:0 0 4px;font-size:1rem;color:var(--preto);font-weight:700;}
+  .topico-card p{margin:0;color:var(--cinza-texto);font-size:.9rem;}
+  .topicos-nota{text-align:center;color:var(--cinza-texto);font-size:.85rem;margin-top:22px;}
+
+  /* ===== KIT ===== */
+  .kit{background:var(--verde-escuro);color:var(--branco);}
+  .kit .section-title h2{color:var(--branco);}
+  .kit .section-title p{color:rgba(255,255,255,.7);}
+  .kit .section-title .eyebrow{color:var(--verde-vibrante);}
+  .kit-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:820px;margin:0 auto;}
+  .kit-item{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);border-radius:11px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start;font-size:.92rem;}
+  .kit-item .num{color:var(--verde-vibrante);font-weight:700;font-family:'Cormorant Garamond',serif;font-size:1.05rem;}
+
+  /* ===== OFERTA ===== */
+  .oferta{background:var(--cinza-claro);}
+  .oferta-box{max-width:520px;margin:0 auto;background:var(--branco);border:1px solid var(--borda);border-radius:18px;padding:38px 32px;text-align:center;box-shadow:var(--sombra);}
+  .oferta-box .selo{display:inline-block;background:rgba(50,209,116,.12);color:var(--verde-vibrante-2);font-weight:700;font-size:.78rem;padding:6px 14px;border-radius:999px;margin-bottom:16px;font-family:'Inter';}
+  .oferta-box .preco{font-family:'Cormorant Garamond',serif;font-size:2.9rem;font-weight:700;color:var(--verde-escuro);margin:2px 0 2px;}
+  .oferta-box .preco small{font-size:.95rem;font-weight:600;color:var(--cinza-texto);font-family:'Inter';}
+  .oferta-box ul{text-align:left;margin:22px 0;padding:0;list-style:none;color:var(--cinza-texto);font-size:.92rem;}
+  .oferta-box ul li{padding:8px 0;border-bottom:1px solid var(--borda);display:flex;gap:10px;}
+  .oferta-box ul li:last-child{border-bottom:none;}
+  .oferta-box .btn-primary{width:100%;display:block;text-align:center;}
+  .oferta-box small.aviso{display:block;margin-top:14px;color:var(--cinza-texto);font-size:.78rem;}
+
+  /* ===== EXPECTATIVA (substitui depoimentos fabricados) ===== */
+  .expectativa{background:var(--branco);}
+  .expectativa-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .expectativa-card{border:1px solid var(--borda);border-radius:14px;padding:24px 20px;text-align:center;}
+  .expectativa-card .num{width:34px;height:34px;border-radius:50%;background:var(--verde-escuro);color:var(--branco);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;margin:0 auto 12px;}
+  .expectativa-card h4{font-family:'Inter';font-size:.98rem;color:var(--preto);margin-bottom:6px;}
+  .expectativa-card p{color:var(--cinza-texto);font-size:.88rem;margin:0;}
+  .expectativa-aviso{text-align:center;color:var(--cinza-texto);font-size:.82rem;margin-top:22px;max-width:520px;margin-inline:auto;}
+
+  /* ===== CONSULTORIA ===== */
+  .consultoria{background:linear-gradient(135deg,var(--verde-vibrante-2),var(--verde-escuro));color:var(--branco);text-align:center;border-radius:22px;margin:0 20px;padding:46px 28px;}
+  .consultoria h2{color:var(--branco);font-size:clamp(1.4rem,4vw,1.9rem);}
+  .consultoria p{font-family:'Inter';max-width:560px;margin:0 auto 24px;color:rgba(255,255,255,.9);font-size:.95rem;}
+  .consultoria-planos{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:26px;}
+  .plano-chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:12px;padding:14px 20px;font-size:.86rem;min-width:140px;font-family:'Inter';}
+  .plano-chip strong{display:block;font-family:'Cormorant Garamond',serif;font-size:1.3rem;margin-bottom:2px;}
+
+  /* ===== FAQ ===== */
+  .faq-item{border:1px solid var(--borda);border-radius:11px;margin-bottom:11px;overflow:hidden;}
+  .faq-q{width:100%;text-align:left;background:var(--branco);border:none;padding:17px 20px;font-family:'Inter';font-weight:700;font-size:.95rem;color:var(--preto);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+  .faq-q .mais{color:var(--verde-vibrante-2);font-size:1.25rem;flex:0 0 auto;transition:transform .2s ease;}
+  .faq-item.open .faq-q .mais{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;padding:0 20px;color:var(--cinza-texto);font-size:.9rem;}
+  .faq-item.open .faq-a{max-height:260px;padding:0 20px 17px;}
+
+  .aviso-box{background:#FFF8E6;border:1px solid #F0D98C;border-radius:13px;padding:18px 20px;font-size:.86rem;color:#6B5519;max-width:680px;margin:0 auto;}
+
+  /* ===== FOOTER ===== */
+  .footer-cta{background:var(--preto);color:var(--branco);text-align:center;padding:58px 0;}
+  .footer-cta h2{color:var(--branco);}
+  .footer-cta p{font-family:'Inter';}
+  .whatsapp-float{position:fixed;bottom:20px;right:20px;background:var(--verde-vibrante);color:var(--preto);width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 8px 20px rgba(0,0,0,.25);font-size:1.5rem;z-index:60;}
+  footer.rodape{background:var(--verde-escuro);color:rgba(255,255,255,.55);text-align:center;padding:20px 0;font-size:.78rem;font-family:'Inter';}
+
+  @media (max-width: 760px){
+    .grid-3{grid-template-columns:1fr;}
+    .topicos-grid{grid-template-columns:1fr;}
+    .expectativa-grid{grid-template-columns:1fr;}
+    .kit-list{grid-template-columns:1fr;}
+    .consultoria{margin:0 12px;padding:34px 20px;}
+    section{padding:50px 0;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">Negócio<span>Digital</span>na Prática</div>
+    <a href="#oferta" class="btn-header">Quero o kit</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero grao">
+  <div class="container">
+    <span class="tag">Kit digital · pequenos negócios</span>
+    <h1>Organize o marketing do seu negócio e <em>venda mais</em>, sem precisar de agência</h1>
+    <p class="subtitle">Um guia direto ao ponto, organizado por tópicos — perfil, conteúdo, WhatsApp, clientes e IA — pra quem não tem tempo nem equipe, mas precisa de clientes novos toda semana.</p>
+    <div class="hero-ctas">
+      <a href="#oferta" class="btn-primary">Quero o kit por R$ 29,90</a>
+      <a href="#consultoria" class="btn-secondary">Conhecer a consultoria mensal</a>
+    </div>
+    <div class="price-pill">Pagamento único de <strong>R$ 29,90</strong></div>
+  </div>
+</section>
+
+<!-- PROBLEMAS -->
+<section class="problemas">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">O problema</span>
+      <h2>Se algo abaixo parece familiar, este kit foi feito pra você</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="icone">📱</div>
+        <h3>Não sabe o que postar</h3>
+        <p>Abre o Instagram, trava, e o perfil fica parado por semanas.</p>
+      </div>
+      <div class="card">
+        <div class="icone">💬</div>
+        <h3>Perde vendas no WhatsApp</h3>
+        <p>Cliente pergunta o preço, some, e ninguém faz o acompanhamento.</p>
+      </div>
+      <div class="card">
+        <div class="icone">📋</div>
+        <h3>Não sabe o que funciona</h3>
+        <p>Não tem ideia de quantos contatos viram venda de verdade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TÓPICOS -->
+<section class="topicos">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">O que você vai aplicar</span>
+      <h2>7 tópicos, direto ao ponto</h2>
+      <p>Sem enrolação: cada tópico é um pedaço do método, pronto pra usar no seu negócio.</p>
+    </div>
+    <div class="topicos-grid">
+      <div class="topico-card"><span class="n">01</span><div><h4>Perfil que gera confiança</h4><p>Transforme seu Instagram numa vitrine que convence em segundos.</p></div></div>
+      <div class="topico-card"><span class="n">02</span><div><h4>Conteúdo que atrai clientes</h4><p>O que postar toda semana, sem travar na frente da câmera.</p></div></div>
+      <div class="topico-card"><span class="n">03</span><div><h4>Vendas pelo WhatsApp</h4><p>A conversa certa, do primeiro "oi" até o fechamento.</p></div></div>
+      <div class="topico-card"><span class="n">04</span><div><h4>Mais clientes, sem anúncio</h4><p>Ofertas e divulgação orgânica que realmente trazem gente nova.</p></div></div>
+      <div class="topico-card"><span class="n">05</span><div><h4>IA a seu favor</h4><p>Prompts prontos pro Claude criar conteúdo em minutos.</p></div></div>
+      <div class="topico-card"><span class="n">06</span><div><h4>Organização e resultados</h4><p>Planilha simples e o que olhar todo mês pra saber o que funciona.</p></div></div>
+    </div>
+    <p class="topicos-nota">+ um plano de 30 dias que junta tudo isso num cronograma semana a semana.</p>
+  </div>
+</section>
+
+<!-- KIT COMPLETO -->
+<section class="kit">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">O que vem no kit</span>
+      <h2>Tudo isso dentro de um único material</h2>
+      <p>Pronto pra abrir e aplicar, sem precisar juntar informação espalhada.</p>
+    </div>
+    <div class="kit-list">
+      <div class="kit-item"><span class="num">01</span> E-book completo "Negócio Digital na Prática" (15 capítulos, organizado por tópico)</div>
+      <div class="kit-item"><span class="num">02</span> Calendário de conteúdo — 30 ideias de publicação prontas</div>
+      <div class="kit-item"><span class="num">03</span> 20 roteiros de vídeos curtos para Reels e TikTok</div>
+      <div class="kit-item"><span class="num">04</span> 20 modelos de mensagens comerciais para WhatsApp</div>
+      <div class="kit-item"><span class="num">05</span> 20 prompts prontos para usar no Claude</div>
+      <div class="kit-item"><span class="num">06</span> Planilha de clientes, orçamentos e vendas</div>
+      <div class="kit-item"><span class="num">07</span> Checklist de perfil + plano de execução de 30 dias</div>
+      <div class="kit-item"><span class="num">08</span> Recebido em PDF e também em DOCX editável</div>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA -->
+<section class="oferta" id="oferta">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">Investimento</span>
+      <h2>Comece a organizar seu marketing hoje</h2>
+    </div>
+    <div class="oferta-box">
+      <span class="selo">Pagamento único</span>
+      <div class="preco">R$ 29,90</div>
+      <p style="color:var(--cinza-texto);font-size:.88rem;font-family:'Inter';">Acesso imediato a todo o kit</p>
+      <ul>
+        <li>✅ E-book completo (15 capítulos) + 5 apêndices com materiais extras</li>
+        <li>✅ PDF diagramado + versão editável em DOCX</li>
+        <li>✅ Linguagem simples, direto ao ponto</li>
+        <li>✅ Acesso à oferta de consultoria mensal, se quiser acompanhamento</li>
+      </ul>
+      <a href="https://wa.me/5555997322767?text=Ol%C3%A1!%20Quero%20comprar%20o%20kit%20Neg%C3%B3cio%20Digital%20na%20Pr%C3%A1tica%20por%20R%24%2029%2C90." class="btn-primary">Quero o kit agora</a>
+      <small class="aviso">Compra confirmada diretamente pelo WhatsApp. Assim que você tiver um link de checkout (Hotmart/Kiwify/Eduzz), substitua este botão pelo link de pagamento automático.</small>
+    </div>
+  </div>
+</section>
+
+<!-- EXPECTATIVA (sem depoimentos inventados) -->
+<section class="expectativa">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">O que você pode esperar</span>
+      <h2>Depois de aplicar o método</h2>
+    </div>
+    <div class="expectativa-grid">
+      <div class="expectativa-card">
+        <div class="num">1</div>
+        <h4>Perfil organizado</h4>
+        <p>Seu Instagram deixa de ser um amontoado de fotos soltas e passa a transmitir profissionalismo em segundos.</p>
+      </div>
+      <div class="expectativa-card">
+        <div class="num">2</div>
+        <h4>Rotina de conteúdo</h4>
+        <p>Você para de travar na hora de postar, porque já sabe exatamente o que publicar a cada semana.</p>
+      </div>
+      <div class="expectativa-card">
+        <div class="num">3</div>
+        <h4>Atendimento que converte</h4>
+        <p>Menos clientes somem no meio da conversa, porque você passa a conduzir o WhatsApp com estrutura.</p>
+      </div>
+    </div>
+    <p class="expectativa-aviso">Este é um produto novo — ainda não há depoimentos reais de compradores. Assim que os primeiros clientes aplicarem o método, este espaço será atualizado com relatos reais.</p>
+  </div>
+</section>
+
+<!-- CONSULTORIA -->
+<section style="padding:64px 0;">
+  <div class="container">
+    <div class="consultoria" id="consultoria">
+      <span class="tag" style="margin-bottom:16px;">Serviço opcional e separado</span>
+      <h2>Prefere ter alguém ao seu lado aplicando isso com você?</h2>
+      <p>Consultoria mensal de marketing, feita direto pelo WhatsApp: diagnóstico, planejamento, sugestões de conteúdo e acompanhamento dos seus resultados mês a mês.</p>
+      <div class="consultoria-planos">
+        <div class="plano-chip"><strong>R$ 97</strong>Essencial</div>
+        <div class="plano-chip"><strong>R$ 147</strong>Essencial Plus</div>
+        <div class="plano-chip"><strong>R$ 197</strong>Completo</div>
+      </div>
+      <a href="https://wa.me/5555997322767?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20a%20consultoria%20mensal%20de%20marketing." class="btn-primary">Falar no WhatsApp sobre a consultoria</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="container" style="max-width:700px;">
+    <div class="section-title">
+      <span class="eyebrow">Dúvidas frequentes</span>
+      <h2>Perguntas frequentes</h2>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Em quanto tempo recebo o material? <span class="mais">+</span></button>
+      <div class="faq-a"><p>Assim que o pagamento é confirmado, você recebe um link de acesso com o conteúdo organizado por tópico, além do e-book completo em PDF e DOCX — tudo direto pelo WhatsApp.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Preciso ter experiência com marketing digital? <span class="mais">+</span></button>
+      <div class="faq-a"><p>Não. O material foi escrito em linguagem simples, com exemplos práticos em cada tópico.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">O kit funciona para qualquer tipo de negócio? <span class="mais">+</span></button>
+      <div class="faq-a"><p>Foi pensado para pequenos negócios locais e prestadores de serviço (barbearias, salões, lojas, doces, autônomos). Os exemplos são genéricos para facilitar a adaptação ao seu segmento.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">A consultoria mensal é obrigatória? <span class="mais">+</span></button>
+      <div class="faq-a"><p>Não. O kit funciona de forma independente. A consultoria é um serviço separado, para quem quiser acompanhamento direto comigo.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Existe garantia de reembolso? <span class="mais">+</span></button>
+      <div class="faq-a"><p>Sim. 7 dias de garantia incondicional a partir da compra — se não for pra você, é só pedir o reembolso dentro desse prazo.</p></div>
+    </div>
+
+    <div class="aviso-box" style="margin-top:26px;">
+      ⚠️ <strong>Aviso ao vendedor:</strong> a garantia de 7 dias é o padrão exigido pela maioria das plataformas de produto digital — confirme essa condição ao cadastrar o produto, ou ajuste este texto se o prazo real for diferente.
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<section class="footer-cta">
+  <div class="container">
+    <h2>Pronto para organizar o marketing do seu negócio?</h2>
+    <p style="color:rgba(255,255,255,.72);max-width:500px;margin:0 auto 28px;">Comece hoje com o kit completo por R$ 29,90, ou fale comigo agora pelo WhatsApp.</p>
+    <div class="hero-ctas" style="justify-content:center;">
+      <a href="#oferta" class="btn-primary">Quero o kit agora</a>
+      <a href="https://wa.me/5555997322767?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20do%20Neg%C3%B3cio%20Digital%20na%20Pr%C3%A1tica%20e%20queria%20tirar%20uma%20d%C3%BAvida." class="btn-secondary">Falar no WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<a href="https://wa.me/5555997322767?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20do%20Neg%C3%B3cio%20Digital%20na%20Pr%C3%A1tica%20e%20queria%20tirar%20uma%20d%C3%BAvida." class="whatsapp-float" title="Falar no WhatsApp" aria-label="Falar no WhatsApp">💬</a>
+
+<footer class="rodape">
+  <div class="container">
+    Negócio Digital na Prática — Kit digital de marketing para pequenos negócios.
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.closest('.faq-item');
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(open){ open.classList.remove('open'); });
+      if(!wasOpen){ item.classList.add('open'); }
+    });
+  });
+</script>
+
+</body>
+</html>
